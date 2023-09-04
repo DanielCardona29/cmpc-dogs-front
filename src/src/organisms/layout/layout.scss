@@ -1,0 +1,12 @@
+@import "../../utils//vars.scss";
+
+
+.wrapper-layout {
+    width: 100%;
+    height: 100vh;
+    main.child {
+        padding-top: 80px;
+        min-height: 100%;
+        height: fit-content;
+    }
+}

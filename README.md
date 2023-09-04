@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# Guía para Ejecutar una Aplicación React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta guía te ayudará a ejecutar una aplicación React localmente. Asegúrate de que el servidor backend esté encendido y considera la posibilidad de cambiar el host del backend si es necesario.
 
-## Available Scripts
+## Requisitos Previos
 
-In the project directory, you can run:
+Antes de comenzar, asegúrate de tener instalados los siguientes requisitos:
 
-### `npm start`
+1. [Node.js](https://nodejs.org/): Asegúrate de tener Node.js instalado en tu sistema. Puedes verificar la instalación ejecutando `node -v` en la línea de comandos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Pasos para Ejecutar la Aplicación React
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Sigue estos pasos para ejecutar la aplicación React:
 
-### `npm test`
+1. **Clona el Repositorio:** Clona el repositorio de la aplicación desde GitHub utilizando el siguiente comando:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```bash
+    git clone https://github.com/tu-usuario/tu-repositorio.git
+    ```
 
-### `npm run build`
+   Reemplaza `tu-usuario` y `tu-repositorio` con la URL de tu repositorio.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Accede al Directorio de la Aplicación:** Navega al directorio de la aplicación clonada utilizando el comando `cd`:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    cd tu-repositorio
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Instala las Dependencias:** Instala las dependencias del proyecto utilizando npm (Node Package Manager). Ejecuta el siguiente comando:
 
-### `npm run eject`
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. **Configura el Host del Backend (Opcional):** Si necesitas cambiar el host del backend, dirígete al archivo `src/utils/constants.js` y ajusta la variable `BACKEND_HOST` según tus necesidades. Por ejemplo:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```javascript
+    // src/utils/constants.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    // Cambia esta URL al host de tu servidor backend
+    export const BACKEND_HOST = 'http://mi-servidor-backend.com';
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. **Inicia la Aplicación:** Una vez que todas las dependencias estén instaladas y hayas configurado el host del backend (si es necesario), puedes iniciar la aplicación con el siguiente comando:
 
-## Learn More
+    ```bash
+    npm start
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   Esto iniciará un servidor de desarrollo y abrirá la aplicación en tu navegador web predeterminado.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. **Verifica el Servidor Backend:** Asegúrate de que el servidor backend esté encendido y funcionando correctamente. La aplicación React depende de datos proporcionados por el servidor para funcionar correctamente.
+
+7. **Accede a la Aplicación:** Abre tu navegador web y navega a la siguiente dirección:
+
+    ```plaintext
+    http://localhost:3000
+    ```
+
+   Aquí, podrás ver y utilizar la aplicación React. Asegúrate de que la aplicación pueda comunicarse con el servidor backend utilizando la URL configurada en `src/utils/constants.js`.
+
+## Detener la Aplicación
+
+Para detener la aplicación React, simplemente regresa a la línea de comandos donde ejecutaste `npm start` y presiona `Ctrl + C`. Confirmarás que deseas detener la aplicación y el servidor de desarrollo se cerrará.
+
+¡Listo! Ahora deberías poder ejecutar tu aplicación React localmente con el servidor backend encendido y con la posibilidad de configurar el host del backend según tus necesidades.
