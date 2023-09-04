@@ -1,0 +1,12 @@
+@import "../../utils//vars.scss";
+
+
+.wrapper-layout {
+    width: auto;
+    height: auto;
+    height: 100vh;
+    main.child {
+        padding-top: 80px;
+        min-height: 100vh;
+    }
+}

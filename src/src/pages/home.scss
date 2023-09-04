@@ -1,0 +1,16 @@
+.wrapper-home {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    .class-wrapper {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 1300px;
+    }
+}
