@@ -5,27 +5,39 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { PetContext, petsInter } from '../../context/pets.context';
 
-const ImgMediaCard = () => {
+
+interface ImgMediaCardInter {
+    pet: petsInter;
+}
+
+
+const ImgMediaCard: React.FC<ImgMediaCardInter> = (props) => {
+    const { pet } = props;
+
+    const { deletePet, getSimilarPets } = React.useContext(PetContext);
+
+
     return (
-        <Card sx={{ maxWidth: 345 }} style={{ margin: '20px'}}>
+        <Card sx={{ maxWidth: 345 }} style={{ margin: '20px' }}>
             <CardMedia
                 component="img"
-                alt="green iguana"
+                alt={pet.name}
                 height="140"
-                image="https://cdn.pixabay.com/photo/2022/12/14/21/50/panda-bear-7656377_1280.png"
+                image={pet.img}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    {pet.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    LLDA
+                    {pet.characteristics}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Ver similares</Button>
-                <Button size="small">Leer más</Button>
+                <Button size="small" onClick={() => getSimilarPets && getSimilarPets(pet.breedId!, pet.subBreedID!)}>Ver similares</Button>
+                <Button size="small" onClick={() => deletePet && deletePet(pet.id!)}>Eliminar</Button>
             </CardActions>
         </Card>
     );

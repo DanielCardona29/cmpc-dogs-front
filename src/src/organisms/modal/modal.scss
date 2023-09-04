@@ -1,0 +1,24 @@
+.wrapper-form {
+
+    .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-top: 20px;
+
+
+        .field {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .area {
+            width: 300px;
+            height: 100px;
+        }
+    }
+
+    .wrapper-button {
+        margin-top: 20px;
+    }
+}

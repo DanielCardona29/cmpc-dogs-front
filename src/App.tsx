@@ -7,20 +7,23 @@ import {
 
 import Layout from './src/organisms/layout/Layout';
 import Home from './src/pages/Home';
+import PetContextProvider from './src/context/pets.context';
 
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Layout />}>
+    <PetContextProvider>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Layout />}>
 
-          {/* Conins the main component */}
-          <Route index element={<Home />}></Route>
+            {/* Conins the main component */}
+            <Route index element={<Home />}></Route>
 
-        </Route>
-      </Routes>
-    </Router>
+          </Route>
+        </Routes>
+      </Router>
+    </PetContextProvider>
   );
 }
 
